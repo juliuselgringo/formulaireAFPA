@@ -1,0 +1,182 @@
+:root{
+    font-size: 1.2em;
+}
+
+header{
+    position: fixed;
+    top: 0px;
+    width:100%;
+    margin: auto;
+    background-color: white;
+    
+}
+
+body{
+    margin: auto;
+}
+
+#topPage{
+    display: flex;
+    margin: 2vw;
+    height:4vw;
+}
+
+#errorDisplay{
+    width: 90vw;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#logo{
+    display: flex;
+    justify-content: end;
+}
+
+h1{
+    color: #87BB34;
+    margin-left: 2vw;
+}
+
+#separationH1{
+    border: 2px solid #44A33D ;
+    background-color: #44A33D;
+}
+
+form{
+    margin: 2vw;
+    margin-top: 20vw;
+    display:grid;
+}
+
+input{
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+#nom, #prenom{
+    border-bottom: 1px solid blue;
+    width: 30vw
+}
+
+#formation{
+    width:40vw
+}
+
+.nomPrenom {
+    margin: 1vw;
+    color:blue;
+}
+
+.tempsAbsence{
+    display:grid;
+    grid-template-columns: 40vw 10vw 30vw;
+}
+
+.formationSuivie, .unJour, .periode, .selectAbsence{
+    margin: 1vw;
+}
+
+label{
+    margin-left: 1vw;
+}
+
+.sousTitre{
+    margin: 2vw;
+    color:blue;
+    font-weight: bold;
+}
+
+.unJour, .periode{
+    display: none;
+    width:35vw
+}
+
+#jour{
+    width:30vw;
+}
+
+#horraireDebut, #horraireFin, #nombreJour{
+    width: 10vw;
+}
+
+.motifAbsence, .signature{
+    margin:1vw;
+    width:45vw;
+}
+
+.motifAbsence{
+        border:1px solid black;
+}
+
+main{
+    margin:1vw;
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+}
+
+#ligneTableau{
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+.tableMainTitle{
+    text-align: center;
+    font-weight: bold;
+}
+
+.tableTitle{
+    border-top:1px solid black;
+}
+
+.cachetSignatureEntreprise{
+    margin-bottom: 40vh;
+}
+
+.cachetSignature{
+    text-align: center;
+}
+
+#separationCachetSignature, .stagiaireFormateur,.direction{
+    border:1px solid black;
+}
+
+#stagiaire, #formateur,#avisMF,#decision{
+    text-align: center;
+    font-size:smaller;
+    padding-bottom: 15vw;
+}
+
+#stagiaire{
+    border-bottom: 1px solid black;
+}
+
+.direction{
+    margin-top: 5vw;
+    display:grid;
+    grid-template-columns: 60% 40%;
+}
+
+#decision{
+    border-left:1px solid black;
+}
+
+button{
+    margin: auto;
+    background-color: #87BB34;
+    width: 30vw;
+    height:10vh;
+}
+
+.danger{
+    color:red;
+}
+
+.hidden{
+    visibility: hidden;
+}
