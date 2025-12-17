@@ -56,7 +56,8 @@ input{
 
 #nom, #prenom{
     border-bottom: 1px solid blue;
-    width: 30vw
+    width: 30vw;
+    text-align: center;
 }
 
 #formation{
@@ -96,8 +97,13 @@ label{
     width:30vw;
 }
 
-#horraireDebut, #horraireFin, #nombreJour{
+#horraireDebut, #horraireFin, #nombreDeJours{
     width: 10vw;
+    text-align: center;
+}
+
+#periodeDebut, #periodeFin, #jour{
+    text-align: center;
 }
 
 .motifAbsence, .signature{
@@ -171,8 +177,4 @@ button{
 
 .danger{
     color:red;
-}
-
-.hidden{
-    visibility: hidden;
 }

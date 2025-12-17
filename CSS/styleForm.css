@@ -56,7 +56,8 @@ input{
 
 #nom, #prenom{
     border-bottom: 1px solid blue;
-    width: 30vw
+    width: 30vw;
+    text-align: center;
 }
 
 #formation{
@@ -96,8 +97,18 @@ label{
     width:30vw;
 }
 
-#horraireDebut, #horraireFin, #nombreJour{
+#horraireDebut, #horraireFin, #nombreDeJours{
     width: 10vw;
+    text-align: center;
+}
+
+#periodeDebut, #periodeFin, #jour{
+    text-align: center;
+}
+
+main{
+    display:grid;
+    grid-template-columns: 50% 50%;
 }
 
 .motifAbsence, .signature{
@@ -107,7 +118,7 @@ label{
 
 .motifAbsence{
         border:1px solid black;
-        width:100%;
+
 }
 
 #ligneTableau{
@@ -167,12 +178,27 @@ button{
     background-color: #87BB34;
     width: 30vw;
     height:10vh;
+    font-size: x-large;
 }
 
 .danger{
     color:red;
 }
 
-.hidden{
-    visibility: hidden;
+@media print{
+    header{
+        position: relative;
+    }
+
+    button{
+        display:none;
+    }
+
+    form{
+        margin-top: 0vh;
+    }
+
+    @page :left{
+        margin-top:10vh
+    }
 }
