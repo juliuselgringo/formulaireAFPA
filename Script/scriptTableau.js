@@ -1,6 +1,6 @@
 const divMotifAbsence = document.getElementById("motifAbsence");
 
-fetch("https://juliuselgringo.github.io/apiFormulaire/formData.json", {
+fetch(/*"https://juliuselgringo.github.io/apiFormulaire/formData.json" ||*/ "http://127.0.0.1:5500/ressources/formdata.json", {
     method:"GET",
 })
 .then(response => {
@@ -39,8 +39,9 @@ function displayData(data){
             const checkLine = document.createElement("td");
             const checkB = document.createElement("input");
             checkB.setAttribute("type", "radio");
-            checkB.setAttribute("name", "motif-absence");
-            checkB.value = code;
+            checkB.name = "motif-absence";
+            checkB.value = option;
+            checkB.id = code;
             checkLine.appendChild(checkB);
             
             const labelCheck = document.createElement("label");

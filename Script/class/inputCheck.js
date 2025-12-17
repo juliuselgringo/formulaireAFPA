@@ -1,5 +1,7 @@
 export class InputCheck{
 
+    currentsIssues = 0;
+
     inputBlur(nodeElement,strError){
         nodeElement.addEventListener("blur", (e) => {
 
@@ -24,11 +26,14 @@ export class InputCheck{
         periodeFin.addEventListener("blur", (e) => {
             const periodeDebutStamp = Date.parse(periodeDebut.value);
             const periodeFinStamp = Date.parse(periodeFin.value);
+            const nombreJours = document.getElementById('nombreJours');
 
             if(periodeDebutStamp > periodeFinStamp){
                 this.errorDisplayer(strError);
+                this.currentsIssues +=1;
             }else{
                 this.removeError(strError);
+                this.currentsIssues -= 1;
             }
         })
     }
@@ -36,8 +41,10 @@ export class InputCheck{
     inputError(value, strError){
     if(value === "" || value === null){
             this.errorDisplayer(strError);
+            this.currentsIssues += 1;
         }else{
             this.removeError(strError);
+            this.currentsIssues -= 1;
         }
     }
 
@@ -46,11 +53,13 @@ export class InputCheck{
         
         if(value === "" || value === null){
             this.errorDisplayer(strError);
+            this.currentsIssues += 1;
         }else{
             if(valueStamp < Date.now()){
                 this.errorDisplayer(strError);
             }else{
                 this.removeError(strError);
+                this.currentsIssues -= 1;
             }
         }
     }
@@ -59,19 +68,21 @@ export class InputCheck{
     timeError(endHour, strError){
         let [hour,minute] = endHour.split(":");
         const endHourStamp = hour * 60 + minute;
-        console.log(endHourStamp);
         
         const startHour = document.getElementById("horraireDebut");
         let [hour1,minute1] = startHour.value.split(":");
         const startHourStamp = hour1 * 60 + minute1;
-        console.log(startHourStamp);
+        
         if(endHourStamp === 0 || isNaN(endHourStamp) || startHourStamp === 0 || isNaN(startHourStamp)){
             this.errorDisplayer(strError);
+            this.currentsIssues += 1;
         }else{
             if(endHourStamp < startHourStamp){
             this.errorDisplayer(strError);
+            this.currentsIssues += 1;
         }else{
             this.removeError(strError);
+            this.currentsIssues -= 1;
         }
         }
         

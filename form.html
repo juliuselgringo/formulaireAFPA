@@ -3,9 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire validé</title>
+    <title>Formulaire d'Absence Validé</title>
+    <link rel="stylesheet" href="./CSS/styleForm.css">
+    <link rel="icon" href="./ressources/logo.jpeg" type="image/jpeg">
+    <link rel="shortcut icon" href="./ressources/logo.jpeg" type="image/jpeg">
 </head>
 <body>
+    <header>
+        <div id="topPage">
+            <div id="errorDisplay"></div>
+            <div id="logo"><img src="./ressources/logo.jpeg" alt="logo AFPA"></div>
+        </div>
+        
+        <h1>Autorisation d'Absence</h1>
+        <div id= "separationH1"></div>
+    </header>
+
+    <form method="GET" action="form.html">
+        <div class="nomPrenom">
+            <label for="nom">NOM:</label>
+            <input id="nom" type="text" name="nom" required>
+            <label for="prenom">PRENOM:</label>
+            <input id="prenom" type="text" name="prenom" required>
+        </div>
+        <div class="formationSuivie">
+            <label for="formation">FORMATION SUIVIE:</label>
+            <select id="formation" type="text" name="formation" required>
+                <option>CDA</option>
+                <option>DWWM</option>
+                <option>TSSR</option>
+                <option>ETC...</option>
+            </select>
+        </div>
+        <p class="sousTitre" for="absence">Demande l'autorisation de s'absenter du centre: </p>
+        <div class="selectAbsence">
+            <input id="radio-unJour" type="radio" name="absence" value="1">
+            <label for="radio-unJour">une journée ou moins</label>
+            <input id="radio-periode" type="radio" name="absence" value="2">
+            <label for="radio-periode">plus d'une journée</label>
+        </div>
+        
+        <div class="tempsAbsence">
+            <div class="unJour">
+                <label for="jour">Le </label>
+                <input id="jour" type="date" name="jour"><br>
+                <p><label for="horraireDebut">De </label>
+                <input id="horraireDebut" type="time" name="horraireDebut">
+                <label for="horraireFin"> à </label>
+                <input id="horraireFin" type="time" name="horraireFin"></p>
+            </div>
+            <div class="periode">
+                <label for="periodeDebut">Du </label>
+                <input id="periodeDebut" type="date" name="periodeDebut">
+                <label for="periodeFin"> au </label>
+                <input id="periodeFin" type="date" name="periodeFin"><br>
+                <p for="nombreJours">Soit <input id="nombreDeJours" type="number" name="nombreDeJours"></input> jours complets</p>
+            </div>
+        </div>
+        <p class="sousTitre">Pour le motif suivant: </p>
+        <main>
+            <div class="motifAbsence" id="motifAbsence">
+                <!-- script.js -->
+            </div>
+            <div class="signature" style="display:none">
+                <div class="cachetSignatureEntreprise">
+                    <p class="cachetSignature">Cachet et signature de l'entreprise</p>
+                    <div id="separationCachetSignature"></div>
+                    <p class="cachetSignature">
+                        Merci d'apposer votre signature pour justifier de l'absence de la 
+                        formation de <br>M. ___________________________
+                    </p>
+                </div>
+                <div class="stagiaireFormateur">
+                    <div id="stagiaire">
+                        <p id="signature-stagiaire">Date et signature du stagiaire</p>
+                    </div>
+                    <div id="formateur">
+                        <p id="signature-formateur">Date et signature du formateur</p>
+                    </div>
+                </div>
+                <div class="direction">
+                    <div id="avisMF">
+                        <p>Avis du MF pour décision du Directeur</p>
+                    </div>
+                    <div id="decision">
+                        <p>Décision du Directeur</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <button id="validBtn" type="submit">Valider</button>
+    </form>
     
 </body>
+<script src="./Script/scriptFormValide.js"></script>
+<script src="./Script/scriptTableau.js"></script>
 </html>

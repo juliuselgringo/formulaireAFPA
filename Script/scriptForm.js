@@ -40,11 +40,25 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 check.removeError("horaire-absence-invalide");
                 unJour.style.display = "none";
                 periode.style.display = 'grid';
+                check.inputBlur(periodeDebut, "debut-periode-invalide");
                 check.inputPeriodeBlur(periodeDebut,periodeFin,"periode-absence-invalide")
-
             }
             
         })
+    })
+
+    validBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        
+        check.inputError(lastNameIn.value,"nom-invalide");
+        check.inputError(firstNameIn.value,"prenom-invalide");
+
+        if(check.currentsIssues > 0){
+            alert("Validation impossible, des erreurs subsistent dans la saisie.")
+        }else{
+            document.querySelector("form").submit();
+        }
+        
     })
     
 })

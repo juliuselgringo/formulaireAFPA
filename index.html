@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire d'Absence</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="icon" href="./ressources/logo.jpeg" type="image/jpeg">
+    <link rel="shortcut icon" href="./ressources/logo.jpeg" type="image/jpeg">
 </head>
 <body>
     <header>
         <div id="topPage">
             <div id="errorDisplay"></div>
-            <div id="logo"><img src="./logo.jpeg" alt="logo AFPA"></div>
+            <div id="logo"><img src="./ressources/logo.jpeg" alt="logo AFPA"></div>
         </div>
         
         <h1>Autorisation d'Absence</h1>
         <div id= "separationH1"></div>
     </header>
 
-    <form method="GET" action="#">
+    <form method="GET" action="form.html">
         <div class="nomPrenom">
             <label for="nom">NOM:</label>
             <input id="nom" type="text" name="nom" required>
@@ -44,18 +46,18 @@
         <div class="tempsAbsence">
             <div class="unJour">
                 <label for="jour">Le </label>
-                <input id="jour" type="date"><br>
+                <input id="jour" type="date" name="jour"><br>
                 <p><label for="horraireDebut">De </label>
-                <input id="horraireDebut" type="time">
+                <input id="horraireDebut" type="time" name="horraireDebut">
                 <label for="horraireFin"> à </label>
-                <input id="horraireFin" type="time"></p>
+                <input id="horraireFin" type="time" name="horraireFin"></p>
             </div>
             <div class="periode">
                 <label for="periodeDebut">Du </label>
-                <input id="periodeDebut" type="date">
+                <input id="periodeDebut" type="date" name="periodeDebut">
                 <label for="periodeFin"> au </label>
-                <input id="periodeFin" type="date"><br>
-                <p for="nombreJour">Soit <span id="nombreJours">0</span> jours complets</p>
+                <input id="periodeFin" type="date" name="periodeFin"><br>
+                <p for="nombreJour">Soit <input id="nombreJours" type="number" name="nombreDeJours"></input> jours complets</p>
             </div>
         </div>
         <p class="sousTitre">Pour le motif suivant: </p>
@@ -63,7 +65,7 @@
             <div class="motifAbsence" id="motifAbsence">
                 <!-- script.js -->
             </div>
-            <div class="signature">
+            <div class="signature" style="display:none">
                 <div class="cachetSignatureEntreprise">
                     <p class="cachetSignature">Cachet et signature de l'entreprise</p>
                     <div id="separationCachetSignature"></div>
@@ -94,6 +96,6 @@
     </form>
     
 </body>
-<script src="scriptTableau.js"></script>
-<script type="module" src="scriptForm.js"></script>
+<script type="module" src="./Script/scriptForm.js"></script>
+<script type="module" src="./Script/scriptTableau.js"></script>
 </html>
